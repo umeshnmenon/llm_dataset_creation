@@ -1,0 +1,38 @@
+packing_override = "greedy"
+seed = 73
+run_id = "v5-local-demo"
+hidden_size = 6
+learning_rate = 0.12
+momentum = 0.8
+steps = 8
+crash_step = 3
+logical_ranks = 2
+microbatch_size = 1
+gradient_accumulation = 4
+selector_keep_fraction = 0.4
+repeat_cap = 32
+
+[[stages]]
+name = "foundation"
+steps = 2
+sequence_length = 64
+reserve = false
+weights = {web = 0.375, code = 0.25, stem = 0.125, indic = 0.25}
+floors = {indic = 0.125}
+
+[[stages]]
+name = "capability"
+steps = 4
+sequence_length = 128
+reserve = false
+warmup_steps = 2
+weights = {web = 0.125, code = 0.125, stem = 0.125, indic = 0.25, reasoning = 0.125, long = 0.125, agentic = 0.125}
+floors = {indic = 0.125, agentic = 0.125}
+
+[[stages]]
+name = "anneal"
+steps = 2
+sequence_length = 128
+reserve = true
+weights = {web = 0.125, code = 0.125, stem = 0.125, indic = 0.25, reasoning = 0.125, long = 0.125, agentic = 0.125}
+floors = {indic = 0.25, agentic = 0.125}

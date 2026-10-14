@@ -1,0 +1,55 @@
+[PASS] shards_created count=41; blocked=3
+[PASS] tokenizer_hash_verified eae12c742c2243ecce21a7a3ebe3ead0c25ff7152b20815f38582af555291144
+[PASS] manifests_validated; training content, tokenizer, lineage and admission checks passed
+[PASS] mixture_compiled; token-position quotas and warmup recorded
+[PASS] eval_shard_blocked; validation/proxy blocked; embedded canary excluded
+[PASS] batches_packed; policy comparison generated
+[PASS] opus_decisions_recorded step=1; candidates=24
+[PASS] checkpoint_saved main-0001; batch=a9300a017333; loss=4.868224->4.861550
+[PASS] opus_decisions_recorded step=2; candidates=24
+[PASS] checkpoint_saved main-0002; batch=7c17b25f943a; loss=4.861550->4.850648
+[CRASH] process exits at step 3 after training, before transaction commit
+[PASS] crash_simulated; uncommitted transaction rolled back
+[PASS] opus_decisions_recorded step=3; candidates=18
+[PASS] checkpoint_saved main-0003; batch=90a3acd1187a; loss=4.852951->4.841846
+[PASS] opus_decisions_recorded step=4; candidates=15
+[PASS] checkpoint_saved main-0004; batch=15563e021990; loss=4.841912->4.829789
+[PASS] opus_decisions_recorded step=5; candidates=15
+[PASS] checkpoint_saved main-0005; batch=088a03371ddd; loss=4.829071->4.816115
+[PASS] opus_decisions_recorded step=6; candidates=15
+[PASS] checkpoint_saved main-0006; batch=11ab4df70693; loss=4.816832->4.803883
+[PASS] opus_decisions_recorded step=7; candidates=15
+[PASS] checkpoint_saved main-0007; batch=455105597d87; loss=4.805526->4.792458
+[PASS] opus_decisions_recorded step=8; candidates=15
+[PASS] checkpoint_saved main-0008; batch=8e7219fe3795; loss=4.792458->4.779211
+[PASS] run_resumed; committed checkpoint restored in a fresh worker
+[PASS] resume_next_batch_matched
+[PASS] checkpoint_saved replay-0002; batch=7c17b25f943a; loss=4.861550->4.850648
+[PASS] checkpoint_saved replay-0003; batch=90a3acd1187a; loss=4.852951->4.841846
+[PASS] historical_stream_replayed; original pack IDs read from ledger
+[PASS] opus_decisions_recorded step=2; candidates=24
+[PASS] checkpoint_saved fork-0002; batch=241cd571a930; loss=4.862084->4.852656
+[PASS] opus_decisions_recorded step=3; candidates=18
+[PASS] checkpoint_saved fork-0003; batch=60c86a044f7a; loss=4.853440->4.842748
+[PASS] branch_forked; checkpoint main-0001, explicit alternate RNG stream
+[PASS] ledger_integrity
+[PASS] tokenizer_integrity
+[PASS] immutable_shards
+[PASS] evaluation_validation_firewall
+[PASS] contamination_firewall
+[PASS] packing_correctness
+[PASS] loss_attention_position_masks
+[PASS] mixture_curriculum_floors
+[PASS] anneal_reserve
+[PASS] opus_audit_trail
+[PASS] crash_resume_no_skips_duplicates
+[PASS] historical_replay
+[PASS] explicit_fork
+[PASS] learning_trace
+[PASS] actual_training
+[PASS] checkpoint_binding
+[PASS] throughput_accounting
+[PASS] automated_tests
+[PASS] replay_hash_matched; batch IDs, token spans, mask hashes and model/data state verified
+[PASS] audit_completed; performance_measured
+[PASS] all_requirements_verified

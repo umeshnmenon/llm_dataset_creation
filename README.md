@@ -94,6 +94,19 @@ The SQLite WAL journal is append-only and hash chained. All consumed microbatche
 
 Rerunning the demo preserves an existing recognised artifact directory by moving it to a sibling `.previous-<timestamp>` folder. It never recursively deletes results. Training identities are reproducible on the same Python/runtime/code/config; elapsed times naturally differ. Checkpoints reject code/config/schedule changes unless an explicit fork records them.
 
+## Submission files and GitHub links
+
+The complete demo generates the required files inside **`submission_artifacts/`**, not in the repository root:
+
+- [Execution log](submission_artifacts/run.log)
+- [Machine-readable evidence](submission_artifacts/evidence.json)
+- [Human-readable evidence](submission_artifacts/evidence.md)
+- [Performance report](submission_artifacts/performance.json)
+
+Commit the complete `submission_artifacts/` directory together with the implementation. Exclude `.venv/`, `.test-temp/`, `__pycache__/`, and archived `submission_artifacts.previous-*/` directories.
+
+The assignment form requires four publicly accessible GitHub links: the repository, `submission_artifacts/run.log`, `submission_artifacts/evidence.json`, and `submission_artifacts/evidence.md`. Open each file on GitHub after pushing and copy its browser URL. Check all four links in an incognito window before submitting.
+
 ## Generated deliverables
 
 ```text

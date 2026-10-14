@@ -1,0 +1,11 @@
+[project]
+name = "v5-training-data-system"
+version = "1.0.0"
+description = "A small, reproducible and auditable V5 training data execution system"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.uv]
+# Run from the repository checkout; the demo uses bundled data and configuration.
+package = false

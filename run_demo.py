@@ -211,6 +211,10 @@ def demo(args):
         raise ValueError("Schedule supply shortage: inspect supply_report.json")
     atomic_json(root / "config.json", config)
     initialize(root, config, schedule, tokenizer, records)
+    for record in records:
+        if record["split"] == "train":
+            admit(root, record, tokenizer.hash, record["reserve"])
+    emit(root, "[PASS] manifests_validated; training content, tokenizer, lineage and admission checks passed")
     emit(root, "[PASS] mixture_compiled; token-position quotas and warmup recorded")
     ledger = Ledger(root)
     for r in records:
@@ -254,6 +258,7 @@ def demo(args):
     resume_seconds = time.perf_counter() - started
     if read_json(root / "crash_expected.json") != read_json(root / "resume_actual.json"):
         raise AssertionError("Next batch after restart changed")
+    emit(root, "[PASS] run_resumed; committed checkpoint restored in a fresh worker")
     emit(root, "[PASS] resume_next_batch_matched")
     fork_branch(root, "replay", "main", 1, "historical-ledger")
     started = time.perf_counter()
@@ -276,6 +281,8 @@ def demo(args):
         ledger.append("evaluation_access", "main", state["step"], evaluation)
     ledger.db.commit(); ledger.close()
     evidence = audit(root, config, schedule, tests_result, crash_result)
+    if evidence["requirements"]["historical_replay"]["passed"]:
+        emit(root, "[PASS] replay_hash_matched; batch IDs, token spans, mask hashes and model/data state verified")
     perf = read_json(root / "performance.json")
     perf.update({"resume_worker_total_seconds": resume_seconds, "replay_worker_total_seconds": replay_seconds})
     atomic_json(root / "performance.json", perf)

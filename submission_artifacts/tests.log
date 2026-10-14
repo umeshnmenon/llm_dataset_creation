@@ -1,0 +1,21 @@
+test_actual_process_death_rolls_back_pending_step (test_system.SystemTests.test_actual_process_death_rolls_back_pending_step) ... ok
+test_commit_survives_process_death_before_json_export (test_system.SystemTests.test_commit_survives_process_death_before_json_export) ... ok
+test_concat_keeps_every_token_and_source_offset (test_system.SystemTests.test_concat_keeps_every_token_and_source_offset) ... ok
+test_firewall_and_immutable_admission (test_system.SystemTests.test_firewall_and_immutable_admission) ... ok
+test_indic_safe_normalization (test_system.SystemTests.test_indic_safe_normalization) ... ok
+test_ledger_append_only_hash_and_checkpoint_binding (test_system.SystemTests.test_ledger_append_only_hash_and_checkpoint_binding) ... ok
+test_manual_gradient_matches_finite_difference (test_system.SystemTests.test_manual_gradient_matches_finite_difference) ... ok
+test_optimizer_checkpoint_continuation_exact (test_system.SystemTests.test_optimizer_checkpoint_continuation_exact) ... ok
+test_pack_tamper_detected (test_system.SystemTests.test_pack_tamper_detected) ... ok
+test_real_training_reduces_fixed_batch_loss (test_system.SystemTests.test_real_training_reduces_fixed_batch_loss) ... ok
+test_reserve_isolation (test_system.SystemTests.test_reserve_isolation) ... ok
+test_schedule_floors_integer_rounding_warmup (test_system.SystemTests.test_schedule_floors_integer_rounding_warmup) ... ok
+test_selector_scoring_order_and_floor_override (test_system.SystemTests.test_selector_scoring_order_and_floor_override) ... ok
+test_structure_preserving_masks_and_position_ids (test_system.SystemTests.test_structure_preserving_masks_and_position_ids) ... ok
+test_structured_overflow_never_cropped (test_system.SystemTests.test_structured_overflow_never_cropped) ... ok
+test_tokenizer_frozen_and_canonical (test_system.SystemTests.test_tokenizer_frozen_and_canonical) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 1.038s
+
+OK
